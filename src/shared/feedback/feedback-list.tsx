@@ -1,14 +1,12 @@
+import { useFeedbackStore } from "../../modules/feedback/feedback-store";
 import { FeedbackItem } from "./feedback-item";
 
 export const FeedbackList = () => {
-  const feedbackTexts = [
-    "Hello How are you?",
-    "Hello How are you?",
-    "Hello How are you?",
-  ];
+  const { feedbackList } = useFeedbackStore();
+
   return (
     <div>
-      {feedbackTexts.map((feedbackText, id) => (
+      {feedbackList.map((feedbackText, id) => (
         <FeedbackItem key={id} feedbackText={feedbackText} />
       ))}
     </div>
