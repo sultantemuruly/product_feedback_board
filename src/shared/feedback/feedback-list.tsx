@@ -2,7 +2,8 @@ import { useFeedbackStore } from "../../modules/feedback/feedback-store";
 import { FeedbackItem } from "./feedback-item";
 
 export const FeedbackList = () => {
-  const { feedbackList, removeFeedback } = useFeedbackStore();
+  const { feedbackList, removeFeedback, likeFeedback, hasLike } =
+    useFeedbackStore();
 
   return (
     <div>
@@ -11,6 +12,8 @@ export const FeedbackList = () => {
           key={id}
           feedbackText={feedbackText}
           handleDelete={() => removeFeedback(id)}
+          handleLike={() => likeFeedback(!hasLike)}
+          hasLike={hasLike}
         />
       ))}
     </div>
