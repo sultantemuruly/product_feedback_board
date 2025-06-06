@@ -1,7 +1,11 @@
+import { FeedbackForm } from "../modules/feedback/feedback-form";
+import { FeedbackList } from "../modules/feedback/feedback-list";
+
 function App() {
   return (
     <>
-      <h1 className="text-bold text-red-700">Hello World!</h1>
+      <FeedbackForm />
+      <FeedbackList />
     </>
   );
 }
